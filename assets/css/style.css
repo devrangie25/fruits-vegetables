@@ -1,0 +1,72 @@
+.reset-btn {
+	border: none;
+	border-radius: 0.3rem;
+	text-align: center;
+	text-decoration: none;
+	margin-left: 0.5rem;
+	padding: 0.7rem;
+	font-size: 14px;
+	cursor: pointer;
+	align-items: center;
+	display: flex;
+}
+.title {
+	padding: 1rem;
+	font-weight: bold;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+}
+.row {
+	display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+	flex: 1;
+	padding: 0.8rem;
+}
+
+.vegetables-container-list,
+.fruits-container-list {
+	box-shadow: 0 4px 8px 0 rgba(51, 51, 51, 0.2);
+	transition: 0.3s;
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 0.3rem;
+}
+
+.vegetables-container-list:hover,
+.fruits-container-list:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.fruits-list,
+.vegetables-list {
+	padding: 1rem;
+}
+
+.fu-list,
+.ve-list {
+	list-style: none;
+}
+
+.fu-list-item,
+.ve-list-item {
+	padding: 0.8rem;
+	border-radius: 0.3rem;
+}
+
+.fu-list-item:hover {
+	box-shadow: 0 2px 3px 0 rgba(51, 51, 51, 0.2);
+}
+.drag-img {
+	cursor: move;
+}
+
+.nav-header {
+	display: flex;
+	flex: 1;
+	justify-content: right;
+	padding: 0.5rem;
+}
