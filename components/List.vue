@@ -7,10 +7,10 @@
 					<draggable
 						v-model="itemsCloned"
 						group="people"
-						@start="drag = true"
 						handle=".handle"
 						:move="checkMove"
 						@change="log"
+						@start="drag = true"
 						@end="drag = true"
 					>
 						<li
@@ -64,7 +64,7 @@ export default {
 		return {
 			hover: null,
 			itemsCloned: [...this.items],
-			isFinishDrag: false
+			isFinishDrag: false,
 		};
 	},
 
@@ -77,33 +77,37 @@ export default {
 
 	computed: {
 		listTitle() {
-			return `${this.title.charAt(0).toUpperCase()}${this.title.substr(1).toLowerCase()}`;
+			return `${this.title.charAt(0).toUpperCase()}${this.title
+				.substr(1)
+				.toLowerCase()}`;
 		},
 	},
 
 	methods: {
-
 		log: function (evt) {
 			console.log("log", evt);
 		},
 
 		checkMove(evt) {
-
-			const { dragged, related } = evt
+			const { dragged, related } = evt;
 
 			if (dragged._prevClass !== related._prevClass) {
 				this.$swal.fire({
-					position: 'center',
-					icon: 'warning',
-					title: 'Permission Denied',
-					text: `${evt.draggedContext.element.name} is not a ${dragged._prevClass === 'fu-list-item' ? 'Vegetable' : 'Fruit'}.`,
+					position: "center",
+					icon: "warning",
+					title: "Permission Denied",
+					text: `${evt.draggedContext.element.name} is not a ${
+						dragged._prevClass === "fu-list-item"
+							? "Vegetable"
+							: "Fruit"
+					}.`,
 					showConfirmButton: false,
-					timer: 1500
-				})
-				return false
+					timer: 1500,
+				});
+				return false;
 			}
 
-			return true
+			return true;
 		},
 
 		generateId(name, ind) {

@@ -10,14 +10,10 @@
 </template>
 
 <script>
-import draggable from "vuedraggable";
 
 export default {
 	name: "list-page",
 	layout: 'default',
-	components: {
-		draggable,
-	},
 
 	data() {
 		return {
