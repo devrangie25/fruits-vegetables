@@ -70,8 +70,7 @@ export default {
 
 	watch: {
 		itemsCloned: function (newItems) {
-			let self = this;
-			this.$emit("new-sorted-items", newItems, self.listTitle);
+			this.$emit("new-sorted-items", newItems, this.listTitle);
 		},
 	},
 
@@ -89,15 +88,15 @@ export default {
 		},
 
 		checkMove(evt) {
-			const { dragged, related } = evt;
+			const { draggedContext, relatedContext } = evt;
 
-			if (dragged._prevClass !== related._prevClass) {
+			if (draggedContext.element.type !== relatedContext.element.type) {
 				this.$swal.fire({
 					position: "center",
 					icon: "warning",
 					title: "Permission Denied",
-					text: `${evt.draggedContext.element.name} is not a ${
-						dragged._prevClass === "fu-list-item"
+					text: `${draggedContext.element.name} is not a ${
+						draggedContext.element.type === "fruits"
 							? "Vegetable"
 							: "Fruit"
 					}.`,
